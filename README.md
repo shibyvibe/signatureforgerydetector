@@ -1,3 +1,6 @@
+Shiby comments - The src/test contain the pytest scripts. And src/models contains the taining model and predict model code.
+
+
 SignatureForgeryDetector
 ==============================
 
