@@ -3,7 +3,7 @@ import os
 from flask import Flask, flash, request, redirect, url_for, render_template
 from src.models.predict_SignatureForgeryDetectorLib import isForgery as fD
 
-UPLOAD_FOLDER = '/notebooks/capstone/release/signatureforgerydetector/upload'
+UPLOAD_FOLDER = './upload'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 
