@@ -1,3 +1,10 @@
+**Instructions to access the service via Web UI**
+
+The application is accesible via a Web UI developed in Flask. The application is deployed in Paperspace and the UI takes a person Id (for a person with signature specimens on file) and the new signature specimen to be checked.
+
+Currently unable to forward the port in Paperspace to my local machine and hence the URL can only be access via curl. The curl scripts to test the web ui is in the curl_test directory.
+
+
 Shiby comments - The src/test contain the pytest scripts. And src/models contains the taining model and predict model code.
 
 
