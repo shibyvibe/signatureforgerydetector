@@ -20,8 +20,7 @@ Currently unable to forward the port in Paperspace to my local machine and hence
 7) Launch the app SignerVerifier.py
 8) Access the app from the browser.
 
-Project Organization
-------------
+**Project Organizatoin**
 
     ├── README.md          <- The top-level README for developers using this project.
     ├── data               <- https://drive.google.com/file/d/1Sid1CBzCGTbHrGsE4vBQoJAPEeNB_4N5/view?usp=sharing
