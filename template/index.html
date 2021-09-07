@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+
+	<!doctype html>
+	<title>Upload new File</title>
+	<h1>Uploads new File</h1>
+	<form method=post enctype=multipart/form-data action="/upload">
+		PersonId: <input type=text name=personId><br>
+		Signature:<input type=file name=file><br><br>
+		<input type=submit value=Submit>
+	</form>
+
+    <img src="{{ filePath }}" alt="User Image" style="max-height: 20em;max-width: 20em;"><b>{{ result }} </b>
+</body>
+</html>
