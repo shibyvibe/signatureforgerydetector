@@ -1,16 +1,23 @@
 import os
 
+import logging
+
 from flask import Flask, flash, request, redirect, url_for, render_template
 from src.models.predict_SignatureForgeryDetectorLib import isForgery as fD
 
 UPLOAD_FOLDER = './upload'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
+logging.basicConfig(filename='SignerVerifier.log',level=logging.INFO)
 
 def performSignatureVerification (personId, compareImgPath):
     resp = fD(personId,compareImgPath)
     return "PersonId: " + str(personId) + ": " + resp
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+        
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True, static_folder=UPLOAD_FOLDER)
@@ -24,9 +31,11 @@ def create_app(test_config=None):
     if test_config is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile('config.py', silent=True)
-    else:
+        logging.info("Loaded config from config.py")
+
+    #else:
         # load the test config if passed in
-        app.config.from_mapping(test_config)
+        #app.config.from_mapping(test_config)
 
     # ensure the instance folder exists
     try:
@@ -37,6 +46,9 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/')
     def indexPage():
+
+        logging.info("Loading index page ...")
+
         response = '''
         <!doctype html>
         <title>Upload new File</title>
@@ -54,13 +66,7 @@ def create_app(test_config=None):
         #full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'NFI-00101001.png')
         return render_template("index.html", filePath = full_filename, result=result)
         
-        #return response;
-
-
-    def allowed_file(filename):
-        return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
+        #return response
 
     @app.route('/upload', methods=['GET', 'POST'])
     def upload_file():
@@ -78,7 +84,9 @@ def create_app(test_config=None):
             if file and allowed_file(file.filename):
                 #filename = secure_filename(file.filename)
                 filename = file.filename
-                
+               
+                logging.info(">>> Upload file {} is from allowed list".format(filename))
+
                 #imgFilePath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 imgFilePath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
                 file.save(imgFilePath)
