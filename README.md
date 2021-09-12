@@ -10,6 +10,8 @@ The application is accesible via a Web UI developed in Flask. The application is
 
 Currently unable to forward the port in Paperspace to my local machine and hence the URL can only be access via curl. The curl scripts to test the web ui is in the curl_test directory.
 
+**Trained Model weights and embedding for train and test** can be found in google drive (https://drive.google.com/drive/folders/1u-ZZtJ8doXgf1kLsZdt989t_aFY-Du_w?usp=sharing)
+
 **Setup instructions**
 
 1) Install the dependencies specified in the requirements.txt file
