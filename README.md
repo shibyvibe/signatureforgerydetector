@@ -2,7 +2,7 @@
 Hard documents with wet signatures are still the norm when establishing contract agreements between entities. The signatures of authorizers of any future changes or transactional requests related to these agreements need to be vetted against the wet signatures in the original contract agreement. The vetting processing is currently manual in most organizations and typically manually comparing wet signatures against a signature on file and also to detect forgery. This solution uses AI based image processing capabilities to automate this manual activity.
 
 **Approach**
-This app compares a provided signature specimen against a set of 11 genuine signatures on file for a person to determine the probability that the provided specimen is a forgery. The AI model utilizes combination of DNN using a Triplet loss mining training approach and a logistic regression model for forgery decisioning. The model provides predict the probability with a sensitive of 86% and precision of 93%. More details can be found at https://drive.google.com/drive/u/0/folders/1yYwzVqzHao4xhUB_PIutK3WxtiGz5mVj  
+This app compares a provided signature specimen against a set of 11 genuine signatures on file for a person to determine the probability that the provided specimen is a forgery. The AI model utilizes combination of DNN using a Triplet loss mining training approach and a logistic regression model for forgery decisioning. The model provides predict the probability with a sensitive of 86% and precision of 93%. More details can be found at https://docs.google.com/document/d/1Cquh-PaJi8LOWQ9mbTtfFg4QUjyaYuA-VmfiK3M9ccY/edit?usp=sharing  
 
 **Instructions to access the service via Web UI**
 
